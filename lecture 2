@@ -7,12 +7,15 @@ x = input('Введите число от 0 до 99: ')
 
 if x.isdigit():
     x = int(x)
-    if x % 10 > 0 and x // 10 != 0:
-        if x > 20:
-            print(num_20_90[x // 10 - 2] + ' ' + num_0_10[x % 10])
+    if 0 <= x <= 99:
+        if x % 10 > 0 and x // 10 != 0:
+            if x > 20:
+                print(num_20_90[x // 10 - 2] + ' ' + num_0_10[x % 10])
+            else:
+                print(num_11_19[x - 11])
         else:
-            print(num_11_19[x - 11])
+            print(num_0_10[x])
     else:
-        print(num_0_10[x])
+        print('Выход из диапазона чисел')
 else:
     print('Ошибка. Введите число')
