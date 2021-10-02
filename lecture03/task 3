@@ -59,8 +59,5 @@ for j in range(y + 1):
                 maze[j][i] = '\033[94m' + str(maze[j][i])
 
 else:
-    print()
-    print()
-
     for j in range(y + 1):
         print(*maze[j])
