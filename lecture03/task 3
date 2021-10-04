@@ -33,7 +33,7 @@ x = 20
 y = 20
 t = 0
 
-while t != 20:
+while t != x ** 2:
     t += 1
     for j in range(y):
         for i in range(x):
