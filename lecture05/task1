@@ -1,0 +1,18 @@
+f = open('task1.txt')
+st = open('output.txt', 'w')
+a = []
+
+for i in f:
+    a.append(int(i))
+
+f.close()
+
+for x in range(len(a)):
+    sum = 2020
+    for i in range(x, len(a)):
+        for j in range(i, len(a)):
+            if a[i] != a[j] != a[x] and a[i] != a[x] and sum - a[x] - a[i] - a[j] == 0:
+                print(a[i] + a[j] + a[x], a[i], a[j], a[x])
+                st.write(str(a[x] * a[i] * a[j]) + '\n')
+            else:
+                sum = 2020
