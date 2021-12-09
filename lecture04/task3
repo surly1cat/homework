@@ -6,7 +6,7 @@ flag = True
 
 for i in range(N):
     ran_nums.append(random.randrange(-1000, 1000))
-print(*ran_nums)
+
 while flag:
     random.shuffle(ran_nums)
     for i in range(N - 1):
@@ -16,4 +16,4 @@ while flag:
         else:
             break
 
-print(ran_nums)
+print(*ran_nums)
