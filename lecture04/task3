@@ -1,0 +1,19 @@
+import random
+
+N = int(input())
+ran_nums = []
+flag = True
+
+for i in range(N):
+    ran_nums.append(random.randrange(-1000, 1000))
+print(*ran_nums)
+while flag:
+    random.shuffle(ran_nums)
+    for i in range(N - 1):
+        if ran_nums[i] < ran_nums[i + 1]:
+            if i == N - 2:
+                flag = False
+        else:
+            break
+
+print(ran_nums)
