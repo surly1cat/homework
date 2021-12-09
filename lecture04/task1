@@ -1,0 +1,8 @@
+import random
+
+N = int(input())
+ran_nums = []
+
+for i in range(N):
+    ran_nums.append(random.randrange(-1000000000, 1000000000))
+print(*ran_nums)
