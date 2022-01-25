@@ -1,6 +1,6 @@
 with open('/home/yan/Рабочий стол/pythonProject/input.txt') as f:
     b = f.read().split("\n")
-p = [line.split(" -> ") for line in b[2:]]
+p = [line.split(" -> ") for line in b]
 print(p)
 x = input()
 g = []
@@ -9,15 +9,15 @@ a = [0] * len(p)
 for i in range(len(x) - 1):
     h.append(x[i] + x[i + 1])
 print(h)
-st = ''
 for i in range(5):
     for j in range(len(p)):
+        g = []
         for x in range(len(h)):
             if p[j][0] == h[x]:
-                h.append(h[x][0] + p[j][1])
-                h.append(p[j][1] + h[x][1])
-
-    for x in range(len(h)):
-        st += h[x][0]
-    print(st.count('B'), st.count('H'))
+                g.append(h[x][0] + p[j][1])
+                g.append(p[j][1] + h[x][1])
+                a[j] += 1
+        print(a)
+        print(g)
+    h = g
     print(' ')
