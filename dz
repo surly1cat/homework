@@ -1,64 +1,18 @@
-def put(a, b):
-    if a + b == 'CH' or a + b == 'HC':
-        return 'B'
-    elif a + b == 'HH':
-        return 'N'
-    elif a + b == 'CB':
-        return 'H'
-    elif a + b == 'NH' or a + b == 'HN':
-        return 'C'
-    elif a + b == 'HB':
-        return 'C'
-    elif a + b == 'NN':
-        return 'C'
-    elif a + b == 'BH':
-        return 'H'
-    elif a + b == 'NC':
-        return 'B'
-    elif a + b == 'NB' or a + b == 'BN':
-        return 'B'
-    elif a + b == 'BB':
-        return 'N'
-    elif a + b == 'BC':
-        return 'B'
-    elif a + b == 'CC':
-        return 'N'
-    elif a + b == 'CN':
-        return 'C'
 
-
-p = [0] * 15
-h = ['CH',
-     'HH',
-     'CB',
-     'NH',
-     'HB',
-     'HC',
-     'HN',
-     'NN',
-     'BH',
-     'NC',
-     'NB',
-     'BN',
-     'BB',
-     'BC',
-     'CC',
-     'CN']
-
-times = 40
-
-
-def division(string):
-    return string[0] + put(string[0], string[1]), put(string[0], string[1]) + string[1]
-
-
-x = input()
-b = []
-for i in range(len(x) - 1):
-    b.append(x[i] + x[i + 1])
-print(b)
-for i in range(len(h)):
-    for j in range(len(b)):
-        if h[i] == b[j]:
-            p[i] += 1
+with open('/home/yan/Рабочий стол/pythonProject/input.txt') as f:
+    b = f.read().split("\n")
+p = [line.split(" -> ") for line in b[2:]]
 print(p)
+x = input()
+h = []
+a = [0] * len(p)
+for i in range(len(x) - 1):
+    h.append(x[i] + x[i + 1])
+print(h)
+
+for i in range(40):
+    for j in range(len(p)):
+        for x in range(len(h)):
+            if p[j][0] == h[x]:
+                a[j] += 1
+print(a)
