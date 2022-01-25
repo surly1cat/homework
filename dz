@@ -3,18 +3,21 @@ with open('/home/yan/Рабочий стол/pythonProject/input.txt') as f:
 p = [line.split(" -> ") for line in b[2:]]
 print(p)
 x = input()
+g = []
 h = []
 a = [0] * len(p)
 for i in range(len(x) - 1):
     h.append(x[i] + x[i + 1])
 print(h)
-
-for i in range(40):
+st = ''
+for i in range(5):
     for j in range(len(p)):
-        g = []
         for x in range(len(h)):
             if p[j][0] == h[x]:
-                g.append(h[x][0] + p[j][1])
-                g.append(p[j][1] + h[x][1])
-            if len(g) > 1:
-                print(g)
+                h.append(h[x][0] + p[j][1])
+                h.append(p[j][1] + h[x][1])
+
+    for x in range(len(h)):
+        st += h[x][0]
+    print(st.count('B'), st.count('H'))
+    print(' ')
